@@ -28,10 +28,12 @@ const Contact = () => {
     name: "",
     email: "",
     message: "",
+    phone:"",
   });
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [nameError, setNameError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
   const [confirmation, setConfirmation] = useState("");
 
   const handleChange = (e) => {
@@ -51,6 +53,7 @@ const Contact = () => {
     e.preventDefault();
     setEmailError("");
     setNameError("");
+    setPhoneError("");
     setConfirmation("");
 
     if (!validateEmail(form.email)) {
@@ -60,6 +63,11 @@ const Contact = () => {
 
     if (!form.name.trim()) {
       setNameError("Name is required.");
+      return;
+    }
+
+    if (!form.phone.trim()) {
+      setPhoneError("Phone number is required.");
       return;
     }
 
@@ -105,21 +113,31 @@ const Contact = () => {
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <InputField
-            label="Your Name"
+            label="Your Full Name"
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="Insert Your name here..."
+            placeholder="Your full name here..."
             type="text"
           />
           {nameError && <span className="text-red-500">{nameError}</span>}
+
+          <InputField
+            label="Your Phone Number"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Your phone number here..."
+            type="text"
+          />
+          {phoneError && <span className="text-red-500">{phoneError}</span>}
 
           <InputField
             label="Email Address"
             name="email"
             value={form.email}
             onChange={handleChange}
-            placeholder="What's your email address?"
+            placeholder="Your email address here..."
             type="email"
           />
           {emailError && <span className="text-red-500">{emailError}</span>}

@@ -1,4 +1,10 @@
 import {
+  krish,
+  motif,
+  bit7,
+  ey,
+  se,
+  photon,
   c,
   python,
   java,
@@ -10,16 +16,13 @@ import {
   tailwind,
   nodejs,
   git,
-  edunet,
   weatherpedia,
   termpw,
   payloadmaster,
   threejs,
   mhft,
   sketcher,
-  mathwork,
   CompileVortex,
-  eduskill,
 } from "../assets";
 
 export const navLinks = [
@@ -38,77 +41,94 @@ export const navLinks = [
 ];
 
 export const services = [
-  { title: "C", icon: c },
-  { title: "C++", icon: cpp },
-  { title: "Python", icon: python },
-  { title: "Java", icon: java },
+  { title: "Web Development", icon: c },
+  { title: "Mobile Development", icon: c },
+  { title: "Backend Development", icon: c },
+  { title: "AI Integration", icon: c },
+  { title: "Cloud Computing", icon: c },
+  { title: "DevOps", icon: c },
+  { title: "Frontend Development", icon: c },
 ];
 
 export const technologies = [
   { name: "HTML 5", icon: html },
   { name: "CSS 3", icon: css },
   { name: "JavaScript", icon: javascript },
-  { name: "Rect JS", icon: reactjs },
+  { name: "React JS", icon: reactjs },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Node JS", icon: nodejs },
   { name: "Three JS", icon: threejs },
   { name: "git", icon: git },
+  { title: "C#", icon: c },
+  { title: "NodeJS", icon: cpp },
+  { title: "AngularJS", icon: java },
+  { title: "Typescript", icon: javascript },
+  { title: "AWS", icon: mhft },
+  { title: "Azure", icon: mhft },
+  { title: "Docker", icon: mhft },
+  { title: "Kubernetes", icon: mhft },
 ];
 
 export const experiences = [
   {
-    title: "AI/ML Intern",
-    company_name: "EduSkill Foundation | AWS Academy | AICTE",
-    icon: eduskill,
+    title: "Technical Lead",
+    company_name: "Photon Interactive Pvt Ltd",
+    icon: photon,
     iconBg: "#161329",
-    date: "Sep 2023 - Nov 2023",
+    date: "Feb 2025 - Oct 2025",
     points: [
-      "Acquired hands-on knowledge of AWS Cloud Foundation, delving into cloud infrastructure, services, and deployment.",
-      "also gaining a solid foundation in Machine Learning, covering topics like algorithms, data analysis, and model building.",
+      "Worked as a Technical Lead, overseeing project development and ensuring timely delivery of high-quality software solutions.",
+      "Also contributed as a Full Stack Developer, designing and implementing web applications using modern technologies.",
+      "Used AI technologies to enhance application functionality and user experience by 45%.",
     ],
   },
   {
-    title: "Mathwork Ai Virtual Intern",
-    company_name: "Mathwork | AICTE",
-    icon: mathwork,
+    title: "Project Manager cum Full Stack Developer",
+    company_name: "Search Education Pvt Ltd",
+    icon: se,
     iconBg: "#161329",
-    date: "May 2023 - Sep 2023",
+    date: "Feb 2020 - Jan 2025",
     points: [
-      "Completed virtual internship, gaining a strong foundation in MATLAB, including data analysis and processing.",
-      "Acquired practical skills in image and signal processing, including segmentation, batch processing, and spectral analysis.",
-      "Developed expertise in machine learning models for clustering, classification, and regression, and customized deep learning techniques for image classification.",
+      "Worked as the Project Manager and Full Stack Developer, leading a team of developers to deliver innovative web solutions.",
+      "Managed project timelines, coordinated tasks, and ensured successful project completion while actively contributing to the development process.",
+      "Managed a team developers to successfully deliver 40+ web applications, ensuring high-quality code and timely project completion.",
+      "Increased productivity by 30% through effective project management and streamlined development processes.",
     ],
   },
   {
-    title: "Artificial Intelligence Intern",
-    company_name: "Edunet Foundation | IBM SkillsBuild | AICTE",
-    icon: edunet,
+    title: "Senior Full Stack Developer",
+    company_name: "Ernst & Young LLP",
+    icon: ey,
     iconBg: "#161329",
-    date: "June 2023 - July 2023",
+    date: "Sep 2019 - Jan 2020",
     points: [
-      "Engineered a comprehensive Mental Health Fitness Tracker ML model utilizing Python and scikit-learn.",
-      "Maximized the model's performance by refining model parameters and employing ensemble methods, yielding an outstanding accuracy percentage of 98.50%.",
-      "Leveraged 12 regression algorithms to attain precise outcomes in analyzing and predicting mental fitness levels across 150+ countries.",
+      "Developed and maintained web applications using a variety of technologies including dotnet, AngularJS, and SQL Server.",
+      "Maximized application performance and user experience through effective coding practices and optimization techniques.",
+      "Leveraged strong problem-solving skills to troubleshoot and resolve complex technical issues.",
     ],
   },
 ];
 
 export const projects = [
   {
-    name: "WeatherPedia",
+    name: "Education CRM",
     description:
-      "Web-based platform that allows users to access weather information for their location by entering it in the search field",
+      "Web-based platform that allows users to manage their overseas educational sales and track their progress.",
     tags: [
+      { name: "DotNet C#", color: "blue-text-gradient" },
+      {name: "ReactJS", color: "blue-text-gradient"},
+      {name: "NodeJS", color: "green-text-gradient"},
+      {name: "AWS", color: "pink-text-gradient"},
+      {name: "Azure", color: "yellow-text-gradient"},
       { name: "Javascript", color: "blue-text-gradient" },
       { name: "HTML", color: "green-text-gradient" },
       { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
-      { name: "Weather API by API Ninjas", color: "yellow-text-gradient" },
     ],
     image: weatherpedia,
-    source_code_link: "https://github.com/trajpal2/WeatherPedia",
+    source_code_link: "N/A",
   },
   {
-    name: "Terminal Like Portfolio Website",
+    name: "Search Education Portfolio Website",
     description:
       "A terminal themed portfolio website that allows users to type into the terminal and use commands like a real terminal.",
     tags: [

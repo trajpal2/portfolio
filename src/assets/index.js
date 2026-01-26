@@ -1,7 +1,10 @@
 // Import company logos
-import mathwork from "./company/mathwork.png";
-import edunet from "./company/edunet.png";
-import eduskill from "./company/eduskill.png";
+import krish from './company/krish_imports_logo.jpeg';
+import motif from './company/motif_logo.png';
+import bit7 from './company/bit7_logo.png';
+import ey from './company/ey-logo-black.png';
+import se from './company/se_logo.png';
+import photon from './company/photon_logo.jpeg';
 
 // Import tech stack images
 import python from "./tech-stack/python.png";
@@ -34,8 +37,12 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 
 export {
-  mathwork,
-  edunet,
+  krish,
+  motif,
+  bit7,
+  ey,
+  se,
+  photon,
   python,
   c,
   cpp,
@@ -58,5 +65,4 @@ export {
   logo,
   menu,
   close,
-  eduskill,
 };
