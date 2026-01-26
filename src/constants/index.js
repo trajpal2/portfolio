@@ -59,14 +59,14 @@ export const technologies = [
   { name: "Node JS", icon: nodejs },
   { name: "Three JS", icon: threejs },
   { name: "git", icon: git },
-  { title: "C#", icon: c },
-  { title: "NodeJS", icon: cpp },
-  { title: "AngularJS", icon: java },
-  { title: "Typescript", icon: javascript },
-  { title: "AWS", icon: mhft },
-  { title: "Azure", icon: mhft },
-  { title: "Docker", icon: mhft },
-  { title: "Kubernetes", icon: mhft },
+  { name: "C#", icon: c },
+  { name: "NodeJS", icon: cpp },
+  { name: "AngularJS", icon: java },
+  { name: "Typescript", icon: javascript },
+  { name: "AWS", icon: mhft },
+  { name: "Azure", icon: mhft },
+  { name: "Docker", icon: mhft },
+  { name: "Kubernetes", icon: mhft },
 ];
 
 export const experiences = [
