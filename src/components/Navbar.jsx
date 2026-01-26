@@ -9,8 +9,10 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const toggleResume = () => {
-    const resumeUrl = '/Resume.pdf';
-    window.open(resumeUrl);
+    const baseUrl = window.location.origin;
+    console.log(baseUrl);
+    const resumeUrl = `${baseUrl}/Resume_Tushant.pdf`;
+    window.open(resumeUrl,"_blank");
   };
 
   useEffect(() => {
