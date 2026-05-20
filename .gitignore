@@ -1,4 +1,13 @@
 node_modules
 .git
-
+.next
+out
+dist
 .env
+.env.local
+.DS_Store
+
+# Runtime site counters (updated by API routes — no Redis)
+data/site-stats.json
+# Legacy resume-only counter; migrated into site-stats.json on first read if present
+data/resume-downloads.json

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Contact illustration</title>
+  <desc id="desc">Cartoon person inviting you to fill out the contact form</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141a22"/>
+      <stop offset="100%" stop-color="#0c1117"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="420" rx="24" fill="url(#bg)"/>
+  <ellipse cx="200" cy="380" rx="140" ry="18" fill="#9fb0c2" opacity="0.12"/>
+  <!-- Clipboard / form -->
+  <rect x="210" y="95" width="130" height="165" rx="10" fill="#f3f3f3" stroke="#94a3af" stroke-width="2"/>
+  <rect x="225" y="115" width="100" height="10" rx="3" fill="#d1d5db"/>
+  <rect x="225" y="135" width="85" height="8" rx="2" fill="#e5e7eb"/>
+  <rect x="225" y="152" width="95" height="8" rx="2" fill="#e5e7eb"/>
+  <rect x="225" y="175" width="100" height="36" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="275" y="198" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="11" font-weight="700">Your message</text>
+  <rect x="225" y="225" width="70" height="22" rx="6" fill="#64748b"/>
+  <!-- Body -->
+  <path d="M120 360 L120 220 Q120 175 200 175 Q280 175 280 220 L280 360 Z" fill="url(#shirt)"/>
+  <!-- Neck -->
+  <rect x="175" y="155" width="50" height="35" rx="8" fill="#e8c4a8"/>
+  <!-- Head -->
+  <ellipse cx="200" cy="125" rx="52" ry="58" fill="#e8c4a8"/>
+  <!-- Hair -->
+  <path d="M148 115 Q155 55 200 48 Q245 55 252 115 Q248 88 200 78 Q152 88 148 115" fill="#1e293b"/>
+  <!-- Eyes -->
+  <ellipse cx="180" cy="118" rx="6" ry="8" fill="#1a1025"/>
+  <ellipse cx="220" cy="118" rx="6" ry="8" fill="#1a1025"/>
+  <!-- Smile -->
+  <path d="M175 145 Q200 162 225 145" stroke="#1a1025" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Arm pointing -->
+  <path d="M125 230 Q85 200 70 165 Q65 150 95 140 Q115 135 130 155 L165 210" fill="#e8c4a8" stroke="#c49a7a" stroke-width="1"/>
+  <!-- Hand -->
+  <circle cx="72" cy="148" r="14" fill="#e8c4a8"/>
+  <!-- Speech -->
+  <path d="M95 60 L200 35 L305 60 L295 120 L105 120 Z" fill="#141a22" stroke="#64748b" stroke-width="2"/>
+  <text x="200" y="78" text-anchor="middle" fill="#e8eef4" font-family="system-ui,sans-serif" font-size="13" font-weight="600">Say hello!</text>
+  <text x="200" y="98" text-anchor="middle" fill="#94a3af" font-family="system-ui,sans-serif" font-size="11">Fill the form below</text>
+</svg>

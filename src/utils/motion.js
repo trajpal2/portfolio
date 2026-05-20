@@ -31,20 +31,6 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
-export const zoomIn = (delay, duration) => ({
-  hidden: { scale: 0, opacity: 0 },
-  show: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "tween",
-      delay,
-      duration,
-      ease: "easeOut",
-    },
-  },
-});
-
 export const slideIn = (direction, type, delay, duration) => {
   const x = direction === "left" ? "-100%" : direction === "right" ? "100%" : 0;
   const y = direction === "up" ? "100%" : direction === "down" ? "100%" : 0;
@@ -64,12 +50,12 @@ export const slideIn = (direction, type, delay, duration) => {
   };
 };
 
-export const staggerContainer = (staggerChildren, delayChildren) => ({
+export const staggerContainer = (staggerChildren = 0.12, delayChildren = 0.05) => ({
   hidden: {},
   show: {
     transition: {
       staggerChildren,
-      delayChildren: delayChildren || 0,
+      delayChildren,
     },
   },
 });

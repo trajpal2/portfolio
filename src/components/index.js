@@ -1,28 +1,23 @@
-import {
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
-  StarsCanvas,
-} from "./canvas";
-
-import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Hero from "./Hero";
 import About from "./About";
-import Tech from "./Tech";
+import Achievements from "./Achievements";
 import Experience from "./Experience";
+import Tech from "./Tech";
 import Works from "./Works";
 import Contact from "./Contact";
+import HomePage from "./HomePage";
+import { StarsCanvas } from "./canvas";
 
 export {
-  Hero,
   Navbar,
+  Hero,
   About,
-  Tech,
+  Achievements,
   Experience,
+  Tech,
   Works,
   Contact,
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
+  HomePage,
   StarsCanvas,
 };
