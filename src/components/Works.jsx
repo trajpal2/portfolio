@@ -1,16 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+import educationalCrm from "../../public/assets/projects/educational-crm.png";
+import enterpriseApplications from "../../public/assets/projects/enterprise-applications.png";
+import ecommerceEdtech from "../../public/assets/projects/ecommerce-edtech.png";
+import travelPropertyApps from "../../public/assets/projects/travel-property-apps.png";
 
 import { styles } from "@/styles";
 import { SectionWrapper } from "@/hoc";
 import { projects } from "@/constants";
 import { fadeIn, textVariant } from "@/utils/motion";
+import { assetPath } from "@/utils/assetPath";
+
+const PROJECT_IMAGES = {
+  "/assets/projects/educational-crm.png": educationalCrm,
+  "/assets/projects/enterprise-applications.png": enterpriseApplications,
+  "/assets/projects/ecommerce-edtech.png": ecommerceEdtech,
+  "/assets/projects/travel-property-apps.png": travelPropertyApps,
+};
 
 const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
-  const [imgError, setImgError] = useState(false);
+  const imageSrc = useMemo(
+    () => PROJECT_IMAGES[image] ?? assetPath(image),
+    [image]
+  );
 
   return (
     <motion.div
@@ -19,24 +35,15 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
       className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
     >
       <div className="relative w-full h-[230px] overflow-hidden rounded-2xl bg-black-100">
-        {!imgError ? (
-          <Image
-            src={image}
-            alt={name}
-            width={720}
-            height={460}
-            className="h-full w-full object-cover"
-            unoptimized
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-tertiary px-4 text-center">
-            <span className="text-accent text-sm font-semibold uppercase tracking-wider">
-              Project preview
-            </span>
-            <span className="text-white text-lg font-bold">{name}</span>
-          </div>
-        )}
+        <Image
+          src={imageSrc}
+          alt={name}
+          width={720}
+          height={460}
+          className="h-full w-full object-cover"
+          unoptimized
+          priority={name === "Educational CRM"}
+        />
         {source_code_link && source_code_link !== "#" && (
           <motion.div className="absolute inset-0 flex justify-end m-3 opacity-0 hover:opacity-100 transition-opacity">
             <button
@@ -46,7 +53,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
               aria-label="View source"
             >
               <Image
-                src="/assets/github.png"
+                src={assetPath("/assets/github.png")}
                 alt="github"
                 width={20}
                 height={20}

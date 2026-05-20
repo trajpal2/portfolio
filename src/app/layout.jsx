@@ -1,17 +1,14 @@
 import "./globals.css";
 import Footer from "@/components/Footer";
 import VisitTracker from "@/components/VisitTracker";
-import { keywords, linkedInUrl, siteDescription, siteName, siteTitle, siteUrl } from "@/config/site";
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: siteName,
-  jobTitle: "Senior Software Engineer",
-  url: siteUrl,
-  sameAs: [linkedInUrl],
-  description: siteDescription,
-};
+import {
+  keywords,
+  personJsonLd,
+  siteDescription,
+  siteName,
+  siteTitle,
+  siteUrl,
+} from "@/config/site";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,7 +66,7 @@ export default function RootLayout({ children }) {
       <body className="bg-primary">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <VisitTracker />
         {children}

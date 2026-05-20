@@ -5,8 +5,11 @@ import { incrementContactSubmissions } from "@/lib/siteStats";
 export async function POST(request) {
   try {
     const { name, email, phone, message } = await request.json();
+    const submitterName = name?.trim() ?? "";
+    const submitterEmail = email?.trim() ?? "";
+    const submitterPhone = phone?.trim() ?? "";
 
-    if (!name?.trim() || !email?.trim() || !phone?.trim()) {
+    if (!submitterName || !submitterEmail || !submitterPhone) {
       return NextResponse.json(
         { error: "Name, email, and phone are required." },
         { status: 400 }
@@ -14,7 +17,7 @@ export async function POST(request) {
     }
 
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(submitterEmail)) {
       return NextResponse.json(
         { error: "Please enter a valid email address." },
         { status: 400 }
@@ -29,6 +32,12 @@ export async function POST(request) {
       );
     }
 
+    const mailFrom = process.env.MAIL_FROM?.trim();
+    const from = mailFrom || {
+      name: "Notification From Portfolio",
+      address: smtpUser,
+    };
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 587,
@@ -40,26 +49,26 @@ export async function POST(request) {
     });
 
     await transporter.sendMail({
-      from: {
-        name: "Notification From Portfolio",
-        address: smtpUser,
-      },
+      from,
       to: process.env.CONTACT_EMAIL || "tushant.rajpal23@gmail.com",
-      replyTo: email,
-      subject: `Portfolio Contact from ${name}`,
+      replyTo: {
+        name: submitterName,
+        address: submitterEmail,
+      },
+      subject: `Portfolio Contact from ${submitterName}`,
       text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
+        `Name: ${submitterName}`,
+        `Email: ${submitterEmail}`,
+        `Phone: ${submitterPhone}`,
         "",
         "Message:",
         message || "(no message)",
       ].join("\n"),
       html: `
         <h2>New portfolio message</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Name:</strong> ${submitterName}</p>
+        <p><strong>Email:</strong> ${submitterEmail}</p>
+        <p><strong>Phone:</strong> ${submitterPhone}</p>
         <p><strong>Message:</strong></p>
         <p>${message || "(no message)"}</p>
       `,

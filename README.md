@@ -49,14 +49,6 @@ Linked from the navbar **Resume** item. Lives only on `/resume`, not as a homepa
 | `Tushant_Resume2.pdf` | Preview / view in browser (`resume.file` in `src/constants/index.js`) |
 | `Resume_Tushant.pdf` | Alternate copy (not used by default) |
 
-**Optional — read counters** (`STATS_SECRET` in `.env`):
-
-```bash
-curl "https://trajpal2.github.io/portfolio/api/resume-downloads?secret=YOUR_STATS_SECRET"
-```
-
-Returns `resumeDownloads`, `visits`, `contactSubmissions`, and `updatedAt`.
-
 ## 🚀 Demo
 
 | Page | URL |
@@ -65,7 +57,7 @@ Returns `resumeDownloads`, `visits`, `contactSubmissions`, and `updatedAt`.
 | Resume | [https://trajpal2.github.io/portfolio/resume](https://trajpal2.github.io/portfolio/resume) |
 | Repository | [https://github.com/trajpal2/portfolio](https://github.com/trajpal2/portfolio) |
 
-> **GitHub Pages:** This repo is published as a project site at `/portfolio`. Set `NEXT_PUBLIC_SITE_URL=https://trajpal2.github.io/portfolio` (no trailing slash).
+> **GitHub Pages:** This repo is published as a project site at `/portfolio`.
 
 ## 🖼️ Assets
 
@@ -127,19 +119,7 @@ If your folder is named `Portfolio-Website` after clone, `cd` into that director
 npm install
 ```
 
-3. Environment variables:
-
-```bash
-cp .env.example .env
-```
-
-Set at minimum:
-
-```env
-NEXT_PUBLIC_SITE_URL=https://trajpal2.github.io/portfolio
-```
-
-4. Run locally:
+3. Run locally:
 
 ```bash
 npm run dev
@@ -163,67 +143,24 @@ npm start
 rm -rf .next && npm run dev
 ```
 
-## 🔐 Environment variables
-
-| Variable | Required | Purpose |
-|----------|----------|---------|
-| `NEXT_PUBLIC_SITE_URL` | Yes (prod) | `https://trajpal2.github.io/portfolio` — SEO, sitemap, OG URLs |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | For contact | Send contact form emails |
-| `CONTACT_EMAIL` | Optional | Inbox for contact submissions |
-| `STATS_SECRET` | Optional | Protect `GET /api/resume-downloads` |
-
-Runtime stats: `data/site-stats.json` (template: `data/site-stats.example.json`). No Redis.
-
 ## 💻 Tech Stack
 
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="Next.js" />
-      <br>Next.js 14
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" />
-      <br>React 18
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind CSS" />
-      <br>Tailwind
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=threejs" width="48" height="48" alt="Three.js" />
-      <br>Three.js
-    </td>
-  </tr>
-</table>
+Technologies shown on the portfolio site ([Tech section](https://trajpal2.github.io/portfolio/#tech)) and used across projects:
 
-Also: **Framer Motion**, **Nodemailer**, **React Three Fiber**, **@react-three/drei**.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,sass,js,ts,react,angular,nextjs,dotnet,cs,nodejs,python,mysql,postgres,mongodb,aws,azure,docker,github,gitlab,bitbucket,tailwind,threejs" alt="Tech stack icons" />
+</p>
 
-## 📁 Project structure
+| Category | Technologies |
+|----------|----------------|
+| **Frontend** | HTML5, CSS3, SCSS, JavaScript, TypeScript, React, Angular, Next.js |
+| **Backend** | .NET, C#, Node.js, Python |
+| **Databases** | SQL Server, MySQL, PostgreSQL, MongoDB, DynamoDB, Cosmos DB |
+| **Cloud** | AWS, Azure |
+| **DevOps & VCS** | Docker, GitHub, GitLab, Bitbucket |
+| **Focus areas** | Frontend Development, Backend Development, Cloud Computing, Database Design, AI Integration, DevOps & CI/CD |
 
-```
-src/
-  app/
-    page.jsx                 # Homepage
-    resume/page.jsx          # Resume (preview + download)
-    api/contact/             # Contact form
-    api/resume-download/     # Download counter
-    api/resume-downloads/    # Read counters (STATS_SECRET)
-    api/visit/               # Visit counter
-    layout.jsx               # SEO, OG image: /herobg.png
-    sitemap.js, robots.js
-  components/                # Hero, About, Experience, Works, Contact, …
-  config/site.js             # siteUrl, metadata
-  constants/index.js         # nav, resume, projects, experience
-public/
-  herobg.png
-  Tushant_Resume2.pdf
-  assets/projects/*.png      # Project card images
-  assets/tech/, assets/company/
-  desktop_pc/, planet/       # 3D GLTF assets
-data/
-  site-stats.json            # Runtime counters (gitignored)
-```
+**This site also uses:** Next.js 14, React 18, Tailwind CSS, Framer Motion, Three.js, React Three Fiber, `@react-three/drei`, Nodemailer, Maath.
 
 ## ⚡ Core features
 
