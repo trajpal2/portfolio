@@ -1,7 +1,7 @@
 const techIcon = (file) => `/assets/tech/${file}`;
 
 export const resume = {
-  file: "/Tushant_Resume2.pdf",
+  file: "/Tushant_Resume4.pdf",
   downloadName: "Tushant_Rajpal_Resume.pdf",
   title: "Tushant Rajpal — Resume",
 };
