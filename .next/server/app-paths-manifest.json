@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/resume-downloads/route": "app/api/resume-downloads/route.js",
+  "/api/visit/route": "app/api/visit/route.js",
+  "/api/resume-download/route": "app/api/resume-download/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/page": "app/page.js",
+  "/resume/page": "app/resume/page.js"
+}

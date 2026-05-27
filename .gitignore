@@ -1,11 +1,14 @@
 node_modules
 .git
-.next
 out
 dist
 .env
 .env.local
 .DS_Store
+
+# Explicit: never commit dev server / Turbopack cache (single .sst files can exceed GitHub's 100 MB limit).
+.next/dev/
+.next/cache/
 
 # Runtime site counters (updated by API routes — no Redis)
 data/site-stats.json

@@ -1,11 +1,9 @@
 import fs from "fs/promises";
 import path from "path";
-import { getStore } from "@netlify/blobs";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const STATS_FILE = path.join(DATA_DIR, "site-stats.json");
 const LEGACY_RESUME_FILE = path.join(DATA_DIR, "resume-downloads.json");
-const STATS_KEY = "site-stats";
 
 /** @returns {{ resumeDownloads: number, visits: number, contactSubmissions: number, updatedAt: string | null }} */
 function defaultStats() {
@@ -26,10 +24,6 @@ function normalize(parsed) {
   }
   d.updatedAt = typeof parsed.updatedAt === "string" ? parsed.updatedAt : null;
   return d;
-}
-
-function isNetlifyRuntime() {
-  return process.env.NETLIFY === "true";
 }
 
 /** Serialize file reads/writes to avoid lost updates under concurrent requests. */
@@ -86,35 +80,8 @@ async function writeStats(stats) {
   return next;
 }
 
-function getBlobStore() {
-  return getStore("portfolio-stats");
-}
-
-async function readStatsFromBlob() {
-  const store = getBlobStore();
-  const raw = await store.get(STATS_KEY, { type: "json" });
-  if (!raw) {
-    const initial = { ...defaultStats(), updatedAt: new Date().toISOString() };
-    await store.setJSON(STATS_KEY, initial);
-    return initial;
-  }
-  return normalize(raw);
-}
-
-async function writeStatsToBlob(stats) {
-  const store = getBlobStore();
-  const next = { ...normalize(stats), updatedAt: new Date().toISOString() };
-  await store.setJSON(STATS_KEY, next);
-  return next;
-}
-
 export async function readStats() {
-  return withFile(async () => {
-    if (isNetlifyRuntime()) {
-      return readStatsFromBlob();
-    }
-    return readStatsFromDisk();
-  });
+  return withFile(() => readStatsFromDisk());
 }
 
 /** @deprecated — prefer readStats().resumeDownloads */
@@ -125,15 +92,9 @@ export async function getResumeDownloadCount() {
 
 async function bumpField(field) {
   return withFile(async () => {
-    const stats = isNetlifyRuntime()
-      ? await readStatsFromBlob()
-      : await readStatsFromDisk();
+    const stats = await readStatsFromDisk();
     stats[field] = (stats[field] || 0) + 1;
-    if (isNetlifyRuntime()) {
-      await writeStatsToBlob(stats);
-    } else {
-      await writeStats(stats);
-    }
+    await writeStats(stats);
     return stats[field];
   });
 }
