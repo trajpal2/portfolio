@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tushant Rajpal — Senior Full Stack Engineer / Full Stack Architect. Enterprise applications, AI-powered systems, cloud platforms and automation."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f3f6f8" />
+    <title>Senior Full Stack Engineer & Full Stack Architect | Tushant Rajpal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var themeKey = "portfolio-theme-pref";
+          var pref = localStorage.getItem(themeKey);
+          if (pref !== "light" && pref !== "dark" && pref !== "system") {
+            var legacy = localStorage.getItem("portfolio-theme");
+            pref = legacy === "light" || legacy === "dark" ? legacy : "system";
+          }
+          var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = pref === "system" ? (systemDark ? "dark" : "light") : pref;
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.setAttribute("data-theme-pref", pref);
+          document.documentElement.style.colorScheme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", theme === "dark" ? "#0b1220" : "#f3f6f8");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
