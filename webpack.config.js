@@ -11,7 +11,10 @@ module.exports = (env, argv) => {
       filename: isProd ? "js/[name].[contenthash:8].js" : "js/bundle.js",
       clean: true,
       publicPath: "/",
+      // Avoid webpack's Wasm hasher (often OOMs on cPanel/CloudLinux)
+      hashFunction: "sha256",
     },
+    parallelism: 1,
     resolve: {
       extensions: [".js", ".jsx"],
       alias: {
@@ -61,6 +64,7 @@ module.exports = (env, argv) => {
         },
       ],
     },
-    devtool: isProd ? "source-map" : "eval-source-map",
+    // Source maps are heavy; skip them in production for shared hosting builds
+    devtool: isProd ? false : "eval-source-map",
   };
 };
