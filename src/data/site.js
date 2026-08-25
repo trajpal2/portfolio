@@ -7,7 +7,7 @@ export const SITE = {
   email: "tushant.rajpal23@gmail.com",
   phone: "+91 9300970074",
   linkedin: "https://www.linkedin.com/in/trajpal",
-  github: "https://github.com/",
+  github: "https://github.com/trajpal2",
   story: [
     "12+ Years Experience",
     "Full Stack Engineering",
@@ -350,7 +350,7 @@ export const SERVICES = [
 
 export const SOCIAL_LINKS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/trajpal" },
-  { label: "GitHub", href: "https://github.com/" },
+  { label: "GitHub", href: "https://github.com/trajpal2" },
 ];
 
 export const ADK_AGENTS = [

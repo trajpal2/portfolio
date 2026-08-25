@@ -43,16 +43,25 @@ export default function Contact() {
         body: JSON.stringify({
           name: values.name,
           email: values.email,
-          message: `Company: ${values.company || "N/A"}\nProject: ${values.project || "N/A"}\n\n${values.message}`,
+          company: values.company,
+          project: values.project,
+          message: values.message,
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      if (!res.ok) {
+        const message = data.error || "Something occurred.";
+        const details = data.details ? ` ${data.details}` : "";
+        throw new Error(`${message}${details}`);
+      }
       setStatus({ type: "success", text: data.message || "Thanks — message received." });
       setValues(initial);
       setErrors({});
     } catch (err) {
-      setStatus({ type: "error", text: err.message || "Could not send message." });
+      setStatus({
+        type: "error",
+        text: err.message || "Something occurred. Please try again.",
+      });
     } finally {
       setSubmitting(false);
     }
@@ -117,7 +126,7 @@ export default function Contact() {
                 <span className="error">{errors.message || ""}</span>
               </div>
               <button type="submit" className="btn btn--primary" disabled={submitting}>
-                {submitting ? "Sending..." : "Start a Conversation"}
+                {submitting ? "Sending..." : "Send a Message"}
               </button>
               <p className={`form-status${status.type === "error" ? " is-error" : ""}`}>{status.text}</p>
             </form>
