@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-project",
+  "version": "2.0.0",
+  "description": "Personal portfolio — Next.js (SSR/SEO)",
+  "private": true,
+  "scripts": {
+    "sitemap": "node scripts/generate-sitemap.cjs",
+    "predev": "npm run sitemap",
+    "dev": "next dev",
+    "prebuild": "npm run sitemap",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.5.24",
+    "nodemailer": "^9.0.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
