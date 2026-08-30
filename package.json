@@ -1,38 +1,21 @@
 {
   "name": "portfolio-project",
-  "version": "1.0.0",
-  "description": "Personal portfolio website built with React, Webpack, and Node.js",
+  "version": "2.0.0",
+  "description": "Personal portfolio — Next.js (SSR/SEO)",
   "private": true,
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:client": "webpack serve --mode development --open",
-    "dev:server": "nodemon server/index.js",
-    "build": "npx webpack --mode production",
-    "serve": "npm run build && node server/index.js",
-    "server": "node server/index.js"
+    "sitemap": "node scripts/generate-sitemap.cjs",
+    "predev": "npm run sitemap",
+    "dev": "next dev",
+    "prebuild": "npm run sitemap",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "@babel/preset-react": "^7.26.3",
-    "babel-loader": "^9.2.1",
-    "cors": "^2.8.5",
-    "css-loader": "^7.1.2",
-    "dotenv": "^17.4.2",
-    "express": "^4.21.2",
-    "html-webpack-plugin": "^5.6.3",
+    "next": "^15.5.24",
     "nodemailer": "^9.0.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
-  },
-  "devDependencies": {
-    "concurrently": "^9.1.0",
-    "nodemon": "^3.1.7",
-    "webpack-dev-server": "^5.1.0"
+    "react-dom": "^18.3.1"
   }
 }

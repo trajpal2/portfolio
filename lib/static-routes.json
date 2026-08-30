@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/",
+    "label": "Home",
+    "priority": 1
+  },
+  {
+    "path": "/about",
+    "label": "About",
+    "priority": 0.8
+  },
+  {
+    "path": "/expertise",
+    "label": "Expertise",
+    "priority": 0.8
+  },
+  {
+    "path": "/case-studies",
+    "label": "Case Studies",
+    "priority": 0.9
+  },
+  {
+    "path": "/projects",
+    "label": "Projects",
+    "priority": 0.8
+  },
+  {
+    "path": "/architecture",
+    "label": "Architecture",
+    "priority": 0.7
+  },
+  {
+    "path": "/ai-automation",
+    "label": "AI & Automation",
+    "priority": 0.8
+  },
+  {
+    "path": "/industries",
+    "label": "Industries",
+    "priority": 0.6
+  },
+  {
+    "path": "/experience",
+    "label": "Experience",
+    "priority": 0.8
+  },
+  {
+    "path": "/resume",
+    "label": "Resume",
+    "priority": 0.7
+  },
+  {
+    "path": "/contact",
+    "label": "Contact",
+    "priority": 0.7
+  },
+  {
+    "path": "/privacy",
+    "label": "Privacy Policy",
+    "priority": 0.3
+  },
+  {
+    "path": "/terms",
+    "label": "Terms & Conditions",
+    "priority": 0.3
+  },
+  {
+    "path": "/data-deletion",
+    "label": "Data Deletion",
+    "priority": 0.3
+  },
+  {
+    "path": "/third-party-access",
+    "label": "Third-Party Access",
+    "priority": 0.3
+  },
+  {
+    "path": "/sitemap",
+    "label": "Sitemap",
+    "priority": 0.3
+  }
+]

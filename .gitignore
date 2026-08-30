@@ -1,4 +1,8 @@
 node_modules/
+.next/
+build/
+dist/
+out/
 .DS_Store
 *.log
 .env
