@@ -14,9 +14,9 @@ The site presents **12+ years** of experience building enterprise applications, 
 | --- | --- |
 | **Role** | Senior Full Stack Engineer \| Full Stack Architect |
 | **Strengths** | Enterprise apps · AI agents / RAG · n8n automation · Cloud · System architecture |
-| **Email** | [tushant.rajpal23@gmail.com](mailto:tushant.rajpal23@gmail.com) |
-| **LinkedIn** | [linkedin.com/in/trajpal](https://www.linkedin.com/in/trajpal) |
-| **GitHub** | [github.com/trajpal2](https://github.com/trajpal2) |
+| **Email** | tushant.rajpal23@gmail.com |
+| **LinkedIn** | trajpal |
+| **GitHub** | trajpal2 |
 
 ---
 
@@ -37,7 +37,7 @@ The site presents **12+ years** of experience building enterprise applications, 
 
 | Layer | Choice |
 | --- | --- |
-| Framework | [Next.js](https://nextjs.org/) 15 (App Router) |
+| Framework | Next.js 15 (App Router) |
 | UI | React 18, custom CSS (`app/globals.css`) |
 | Fonts | Inter via `next/font` |
 | Email | Nodemailer (SMTP) |
@@ -77,7 +77,7 @@ Content and case-study listings are primarily driven from `lib/site.js`. SEO for
 ### Install
 
 ```bash
-git clone https://github.com/trajpal2/portfolio.git
+git clone <repository-url>
 cd portfolio
 npm install
 ```
@@ -107,7 +107,7 @@ Never commit `.env` or `.env.local`.
 npm run dev
 ```
 
-App runs at [http://localhost:3000](http://localhost:3000).  
+App runs locally on port `3000`.  
 `predev` regenerates `public/sitemap.xml` from routes + case studies.
 
 ### Production
@@ -176,7 +176,7 @@ High-level topics covered on the site:
 - Titles, descriptions, keywords, canonicals, Open Graph, and Twitter cards are defined per page in `lib/page-seo.js`
 - Person / WebSite / ProfessionalService JSON-LD is injected in the root layout
 - Case study listing includes ItemList structured data
-- After deploy, submit `https://your-domain.com/sitemap.xml` in Google Search Console
+- After deploy, submit your site’s `sitemap.xml` in Google Search Console
 
 ---
 
@@ -200,4 +200,4 @@ All rights reserved unless otherwise noted.
 
 Interested in architecture, AI systems, automation platforms, or full-stack delivery?
 
-→ [Contact form](/contact) on the live site, or email **tushant.rajpal23@gmail.com**
+Use the Contact page on the live site, or email **tushant.rajpal23@gmail.com**.
